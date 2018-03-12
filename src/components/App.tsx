@@ -1,10 +1,11 @@
 import * as React from "react";
+import { hot  } from "react-hot-loader";
 import ItemList from './ItemList';
 import ItemStore from '../stores/ItemStore';
 
 export interface AppProps { }
 
-export default class App extends React.Component<AppProps, undefined> {
+class App extends React.Component<AppProps, undefined> {
 
     private createItem(evt: React.KeyboardEvent<HTMLInputElement>){
       if (evt.which === 13){
@@ -23,3 +24,5 @@ export default class App extends React.Component<AppProps, undefined> {
         );
     }
 }
+
+export default hot(module)(App)

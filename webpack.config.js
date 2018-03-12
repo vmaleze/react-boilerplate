@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'eval',
@@ -25,12 +26,13 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin()
   ],
 
   module: {
     rules: [
-      { test: /\.tsx?$/, use: ['react-hot-loader/webpack', 'awesome-typescript-loader'], exclude: /node_modules/ },
+      { test: /\.tsx?$/, use: ['babel-loader', 'awesome-typescript-loader'], exclude: /node_modules/ },
       { test: /\.css$/, use: [ 'style-loader', 'css-loader', ], },
 			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: "file-loader" },
 			{ test: /\.(woff|woff2)$/, use:"url-loader?prefix=font/&limit=5000" },

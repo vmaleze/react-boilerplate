@@ -4,13 +4,11 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
         "jsx": "react",
         "experimentalDecorators": true
     },
     "include": [
-        "./require.d.ts",
-        "./node_modules/@types/webpack-env/index.d.ts",
         "./src/**/*"
     ],
     "exclude": [
